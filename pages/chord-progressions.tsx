@@ -15,6 +15,7 @@ const ChordProgressions: NextPageWithLayout = () => {
         <label htmlFor="tonic">Tonic:</label>
         <select
           id="tonic"
+          data-testid="tonic"
           value={tonic}
           onChange={(e) => setTonic(e.target.value)}
         >
@@ -29,6 +30,7 @@ const ChordProgressions: NextPageWithLayout = () => {
         <label htmlFor="scale">Scale:</label>
         <select
           id="scale"
+          data-testid="scale"
           value={scale}
           onChange={(e) => setScale(e.target.value)}
         >
@@ -54,7 +56,7 @@ const ChordProgressions: NextPageWithLayout = () => {
   );
 };
 
-const keys = {
+const keys: { [index: string]: { [index: string]: any } } = {
   major: {
     C: Key.majorKey("C"),
     D: Key.majorKey("D"),
