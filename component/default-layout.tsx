@@ -15,7 +15,7 @@ export default function DefaultLayout({
       <div className="flex flex-row justify-center">
         <div className="basis-1/2">
           <Link href="/">
-            <div className="text-2xl">Chord Tools</div>
+            <h1 className="text-2xl font-bold">Chord Tools</h1>
           </Link>
           <Link href="/chord-progressions">
             <div className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
