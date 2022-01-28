@@ -7,8 +7,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "test:watch": "jest --watch",
-    "prepare": "husky install"
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@tonaljs/tonal": "^4.6.5",
