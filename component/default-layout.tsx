@@ -12,8 +12,8 @@ export default function DefaultLayout({
         <meta name="description" content="Chord Tools" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex flex-row justify-center">
-        <div className="basis-1/2">
+      <div className="container mx-auto">
+        <div>
           <Link href="/">
             <h1 className="text-2xl font-bold">Chord Tools</h1>
           </Link>
