@@ -46,8 +46,8 @@ const ChordProgressions: NextPageWithLayout = () => {
           );
           return (
             <div key={a + b}>
-              <span>{a}</span> -------
-              <span>{b}</span>
+              <div className="text-red-500">{a}</div> -------
+              <div className="text-blue-500">{b}</div>
             </div>
           );
         })}
