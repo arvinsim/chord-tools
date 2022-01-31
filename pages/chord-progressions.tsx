@@ -1,13 +1,14 @@
+import { useState } from "react";
 import type { ReactElement } from "react";
 import { Key, Progression } from "@tonaljs/tonal";
 
 import DefaultLayout from "../component/default-layout";
-import { useState } from "react";
+import { useChords } from "../hooks/useChords";
 
 const ChordProgressions: NextPageWithLayout = () => {
   const [tonic, setTonic] = useState("C");
   const [scale, setScale] = useState("major");
-  const chords = keys[scale][tonic].chords.join(" - ");
+  const chords = useChords(tonic, scale);
 
   return (
     <div className="flex flex-col gap-8">
@@ -52,7 +53,7 @@ const ChordProgressions: NextPageWithLayout = () => {
           </div>
         </div>
       </form>
-      <div className="text-center">{chords}</div>
+      <div className="text-center">{chords.join(" - ")}</div>
       <div className="container mx-auto">
         {chordProgressions.map((progression) => {
           const a = progression.join(" - ");
