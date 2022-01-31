@@ -10,49 +10,64 @@ const ChordProgressions: NextPageWithLayout = () => {
   const chords = keys[scale][tonic].chords.join(" - ");
 
   return (
-    <>
+    <div className="flex flex-col gap-8">
+      <div className="text-center text-4xl">Chord Progressions</div>
       <form>
-        <label htmlFor="tonic">Tonic:</label>
-        <select
-          id="tonic"
-          data-testid="tonic"
-          value={tonic}
-          onChange={(e) => setTonic(e.target.value)}
-        >
-          <option value="C">C</option>
-          <option value="D">D</option>
-          <option value="E">E</option>
-          <option value="F">F</option>
-          <option value="G">G</option>
-          <option value="A">A</option>
-          <option value="B">B</option>
-        </select>
-        <label htmlFor="scale">Scale:</label>
-        <select
-          id="scale"
-          data-testid="scale"
-          value={scale}
-          onChange={(e) => setScale(e.target.value)}
-        >
-          <option value="major">Major</option>
-        </select>
+        <div className="flex flex-row">
+          <div className="basis-1/4">
+            <label htmlFor="tonic">Tonic:</label>
+          </div>
+          <div className="basis-3/4">
+            <select
+              id="tonic"
+              data-testid="tonic"
+              value={tonic}
+              className="rounded border-2 border-gray-300"
+              onChange={(e) => setTonic(e.target.value)}
+            >
+              <option value="C">C</option>
+              <option value="D">D</option>
+              <option value="E">E</option>
+              <option value="F">F</option>
+              <option value="G">G</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+            </select>
+          </div>
+        </div>
+        <div className="flex flex-row">
+          <div className="basis-1/4">
+            <label htmlFor="scale">Scale:</label>
+          </div>
+          <div className="basis-3/4">
+            <select
+              id="scale"
+              data-testid="scale"
+              value={scale}
+              className="rounded border-2 border-gray-300"
+              onChange={(e) => setScale(e.target.value)}
+            >
+              <option value="major">Major</option>
+            </select>
+          </div>
+        </div>
       </form>
-      <div>{chords}</div>
-      <div>
+      <div className="text-center">{chords}</div>
+      <div className="container mx-auto">
         {chordProgressions.map((progression) => {
           const a = progression.join(" - ");
           const b = Progression.fromRomanNumerals(tonic, progression).join(
             " - "
           );
           return (
-            <div key={a + b}>
-              <div className="text-red-500">{a}</div> -------
-              <div className="text-blue-500">{b}</div>
+            <div className="flex flex-row text-center" key={a + b}>
+              <div className="basis-1/2 text-red-500">{a}</div>
+              <div className="basis-1/2 text-blue-500">{b}</div>
             </div>
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

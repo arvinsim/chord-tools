@@ -6,7 +6,7 @@ export default function DefaultLayout({
   children,
 }: React.PropsWithChildren<{}>) {
   return (
-    <>
+    <div>
       <Head>
         <title>Chord Tools</title>
         <meta name="description" content="Chord Tools" />
@@ -15,7 +15,7 @@ export default function DefaultLayout({
       <div className="container mx-auto w-1/2">
         <div>
           <Link href="/">
-            <h1 className="text-2xl font-bold">Chord Tools</h1>
+            <div className="text-2xl">Chord Tools</div>
           </Link>
           <Link href="/chord-progressions">
             <div className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600">
@@ -25,6 +25,6 @@ export default function DefaultLayout({
         </div>
         <main>{children}</main>
       </div>
-    </>
+    </div>
   );
 }
