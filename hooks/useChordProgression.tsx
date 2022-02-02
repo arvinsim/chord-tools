@@ -19,13 +19,26 @@ export function useChordProgressions(
   const chordProgressions = [
     ["I", "IV", "V", "V"],
     ["I", "I", "IV", "V"],
+    ["I", "VI", "IV", "V"],
+    ["I", "V", "VI", "IV"],
+    ["ii", "V", "I", "IV"],
+    ["V", "V", "I"],
+    ["vi", "ii", "V", "I"],
+    ["I", "V", "IV", "IV", "I", "V", "I", "V"],
+    ["ii", "V", "I"],
+    ["I", "IV", "ii", "V"],
+    ["I", "V", "vi", "iii", "IV", "I", "IV", "V"],
+    ["I", "V", "vi", "IV"],
+    ["III", "VII", "i", "V", "III", "VII", "i", "V", "i"],
   ];
   const chords = useChords(tonic, scale);
 
   return chordProgressions.map((progression) => {
     return {
       progression: progression,
-      chords: progression.map((item) => chords[romanNumeralsMapping[item]]),
+      chords: progression.map(
+        (item) => chords[romanNumeralsMapping[item.toUpperCase()]]
+      ),
     };
   });
 }

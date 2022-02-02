@@ -12,9 +12,9 @@ const ChordProgressions: NextPageWithLayout = () => {
   const chordProgressions = useChordProgressions(tonic, scale);
 
   return (
-    <div className="flex flex-col gap-8">
+    <div>
       <div className="text-center text-4xl">Chord Progressions</div>
-      <form>
+      <form className="flex flex-col gap-8 justify-center">
         <div className="flex flex-row">
           <div className="basis-1/4">
             <label htmlFor="tonic">Tonic:</label>
