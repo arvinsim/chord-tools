@@ -30,6 +30,10 @@ export function useChordProgressions(
     ["I", "V", "vi", "iii", "IV", "I", "IV", "V"],
     ["I", "V", "vi", "IV"],
     ["III", "VII", "i", "V", "III", "VII", "i", "V", "i"],
+    // prettier-ignore
+    ["I", "I", "I", "I", "I", "I", "I", "I", "I", "IV", "IV", "I", "I", "V", "IV", "I", "I"],
+    ["I", "vi", "ii", "V"],
+    ["V", "IV", "I"],
   ];
   const chords = useChords(tonic, scale);
 
