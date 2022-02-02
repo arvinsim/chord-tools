@@ -10,6 +10,20 @@ const ChordProgressions: NextPageWithLayout = () => {
   const [scale, setScale] = useState("major");
   const chords = useChords(tonic, scale);
   const chordProgressions = useChordProgressions(tonic, scale);
+  const tonicOptions = [
+    "C",
+    "Db",
+    "D",
+    "Eb",
+    "E",
+    "F",
+    "Gb",
+    "G",
+    "Ab",
+    "A",
+    "Bb",
+    "B",
+  ];
 
   return (
     <div>
@@ -27,13 +41,13 @@ const ChordProgressions: NextPageWithLayout = () => {
               className="rounded border-2 border-gray-300"
               onChange={(e) => setTonic(e.target.value)}
             >
-              <option value="C">C</option>
-              <option value="D">D</option>
-              <option value="E">E</option>
-              <option value="F">F</option>
-              <option value="G">G</option>
-              <option value="A">A</option>
-              <option value="B">B</option>
+              {tonicOptions.map((tonicOption) => {
+                return (
+                  <option key={tonicOption} value={tonicOption}>
+                    {tonicOption}
+                  </option>
+                );
+              })}
             </select>
           </div>
         </div>
