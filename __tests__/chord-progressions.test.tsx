@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
-import ChordProgressions from "../pages/chord-progressions";
+import ChordProgressions from "../pages";
 
 describe("Chord", () => {
   it("renders 2 labels", () => {

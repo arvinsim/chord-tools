@@ -1,11 +1,13 @@
 import React from "react";
 import "../styles/globals.css";
+import DefaultLayout from "../component/default-layout";
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  // Use the layout defined at the page level, if available
-  const getLayout = Component.getLayout ?? ((page) => page);
-
-  return getLayout(<Component {...pageProps} />);
+  return (
+    <DefaultLayout>
+      <Component {...pageProps} />
+    </DefaultLayout>
+  );
 }
 
 export default MyApp;
