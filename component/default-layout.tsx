@@ -11,7 +11,7 @@ export default function DefaultLayout({
         <meta name="description" content="Chord Tools" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="container mx-auto">
+      <div>
         <main>{children}</main>
       </div>
     </div>
